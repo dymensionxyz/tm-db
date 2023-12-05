@@ -24,7 +24,7 @@ type GoLevelDB struct {
 var _ DB = (*GoLevelDB)(nil)
 
 func NewGoLevelDB(name string, dir string) (*GoLevelDB, error) {
-	return NewGoLevelDBWithOpts(name, dir, nil)
+	return NewGoLevelDBWithOpts(name, dir, &opt.Options{Compression: opt.NoCompression})
 }
 
 func NewGoLevelDBWithOpts(name string, dir string, o *opt.Options) (*GoLevelDB, error) {
